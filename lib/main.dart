@@ -1,4 +1,5 @@
 import 'package:delimeals/categories_screen.dart';
+import 'package:delimeals/category_meals_screeen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,11 +16,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
-        canvasColor: Color.fromARGB(255, 254, 229, 1),
+        // canvasColor: Color.fromARGB(255, 254, 229, 1),
       ),
       title: 'DeliMeals',
       debugShowCheckedModeBanner: false,
       home: const CategoriesScreen(),
+      routes: {
+        '/categories-meals' : (context) => CategoryMealsScreen(),
+      },
     );
   }
 }
