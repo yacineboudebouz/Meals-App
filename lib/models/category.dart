@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// category class which contain all the attributes of a category
 class Category {
   final String id;
   final String title;

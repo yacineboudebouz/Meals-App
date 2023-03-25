@@ -8,13 +8,17 @@ class CategoryItem extends StatelessWidget {
   final Color color;
 
   const CategoryItem(this.id, this.title, this.color);
+  // method to push to a new screen
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx)
-        .pushNamed('/categories-meals', arguments: {'id': id, 'title': title});
+        //here we have the arguments we want to send to the pushed screen
+        .pushNamed(CategoryMealsScreen.routeName,
+            arguments: {'id': id, 'title': title});
   }
 
   @override
   Widget build(BuildContext context) {
+    // ink well is widget which accept on tap function as parameter
     return InkWell(
       onTap: (() => selectCategory(context)),
       splashColor: Colors.amber,

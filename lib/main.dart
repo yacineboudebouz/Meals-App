@@ -20,9 +20,11 @@ class MyApp extends StatelessWidget {
       ),
       title: 'DeliMeals',
       debugShowCheckedModeBanner: false,
-      home: const CategoriesScreen(),
+      initialRoute: '/',
+      // home: const CategoriesScreen(),
       routes: {
-        '/categories-meals' : (context) => CategoryMealsScreen(),
+        '/': (context) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
       },
     );
   }
