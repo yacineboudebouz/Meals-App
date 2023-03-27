@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:delimeals/categories_screen.dart';
+import 'package:delimeals/screens/categories_screen.dart';
 import 'models/category.dart';
 import 'models/meal.dart';
 
@@ -364,72 +364,5 @@ List<Meal> DUMMY_MEALS = [
     isVegetarian: true,
     isLactoseFree: true,
   ),
-  Meal(
-    id: 'm11',
-    categories: ['c4'],
-    title: 'Couscous',
-    imageUrl:
-        'https://www.thespruceeats.com/thmb/YmKj9Hpkvu26Amf0gQhYFL0HItk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/chicken-couscous-recipe-2394845-5-5b3e8d4046e0fb0036f811c7.jpg',
-    ingredients: ['Couscous', 'Carrots', 'Potatoes', 'Chicken', 'Spices'],
-    steps: [
-      'Cook the couscous',
-      'Boil the vegetables and chicken in a pot',
-      'Serve together'
-    ],
-    duration: 120,
-    complexity: Complexity.Hard,
-    affordability: Affordability.Pricey,
-    isGlutenFree: false,
-    isLactoseFree: true,
-    isVegan: false,
-    isVegetarian: false,
-  ),
-  Meal(
-    id: 'm2',
-    categories: ['c4'],
-    title: 'Shakshuka',
-    imageUrl:
-        'https://www.thespruceeats.com/thmb/fSBQcstwzrEhM-jGxTtTcFZTjP8=/2000x2000/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/shakshuka-recipe-4162959-hero-01-e1584629431752-4a4d8542efc143e2a1a4695d5ed5b9c9.jpg',
-    ingredients: [
-      'Eggs',
-      'Tomatoes',
-      'Bell Peppers',
-      'Onion',
-      'Spices',
-      'Garlic'
-    ],
-    steps: [
-      'Cook the vegetables in a pan',
-      'Crack the eggs over the vegetables',
-      'Bake in the oven until the eggs are cooked'
-    ],
-    duration: 30,
-    complexity: Complexity.Simple,
-    affordability: Affordability.Affordable,
-    isGlutenFree: true,
-    isLactoseFree: true,
-    isVegan: false,
-    isVegetarian: true,
-  ),
-  Meal(
-    id: 'm3',
-    categories: ['c4'],
-    title: 'Chakhchoukha',
-    imageUrl:
-        'https://i.pinimg.com/originals/0e/67/d8/0e67d8cd62816a9cde22945b1aae6868.jpg',
-    ingredients: ['Flour', 'Tomatoes', 'Garlic', 'Lamb', 'Spices', 'Chickpeas'],
-    steps: [
-      'Make the dough and let it rest',
-      'Boil the lamb in a pot with spices',
-      'Crush the dough and add it to the lamb pot',
-      'Serve with chickpeas and sauce'
-    ],
-    duration: 90,
-    complexity: Complexity.Challenging,
-    affordability: Affordability.Luxurious,
-    isGlutenFree: false,
-    isLactoseFree: true,
-    isVegan: false,
-    isVegetarian: false,
-  ),
+  
 ];
