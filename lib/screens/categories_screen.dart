@@ -9,15 +9,15 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Meals App'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Meals App'),
+      // ),
       // gridView, is like a list view but you can specify how the final result looks like
       body: GridView(
         padding: EdgeInsets.all(25),
         // ignore: sort_child_properties_last
         children: DUMMY_CATEGORIES
-        // this map function , treat every model then change to list of widgets 
+            // this map function , treat every model then change to list of widgets
             .map((e) => CategoryItem(e.id, e.title, e.color))
             .toList(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
