@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => TabsScreen(),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
         MealDetailsScreen.routeName: (context) => MealDetailsScreen(),
-        FilterScreen.routeName:(context) => FilterScreen(),
+        FilterScreen.routeName:(context) => FilterScreen(), 
       },
       // onGenerateRoute: (settings) {
       //   print(settings.arguments);
