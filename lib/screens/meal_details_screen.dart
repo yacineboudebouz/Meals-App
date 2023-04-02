@@ -73,55 +73,63 @@ class MealDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('${selectedMeal.title}'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: Column(
-          children: [
-            Container(
-              height: h / 3,
-              width: double.infinity,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  selectedMeal.imageUrl,
-                  fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Column(
+            children: [
+              Container(
+                height: h / 3,
+                width: double.infinity,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(
+                    selectedMeal.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            buildTitle(context, 'Ingredients'),
-            buildContainer(
-              ListView.builder(
-                itemBuilder: ((context, index) => Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 1, horizontal: 10),
-                      child: Card(
-                        color: Colors.amberAccent,
-                        child: Text(
-                          selectedMeal.ingredients[index],
-                        ),
-                      ),
-                    )),
-                itemCount: selectedMeal.ingredients.length,
-              ),
-            ),
-            buildTitle(context, 'Steps'),
-            buildContainer(
-              ListView.builder(
-                itemBuilder: ((context, index) => Column(
-                      children: [
-                        ListTile(
-                          leading: CircleAvatar(
-                            child: Text('# ${(index + 1)}'),
+              buildTitle(context, 'Ingredients'),
+              buildContainer(
+                ListView.builder(
+                  itemBuilder: ((context, index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 1, horizontal: 10),
+                        child: Card(
+                          color: Colors.amberAccent,
+                          child: Text(
+                            selectedMeal.ingredients[index],
                           ),
-                          title: Text(selectedMeal.steps[index]),
-                        )
-                      ],
-                    )),
-                itemCount: selectedMeal.steps.length,
+                        ),
+                      )),
+                  itemCount: selectedMeal.ingredients.length,
+                ),
               ),
-            ),
-          ],
+              buildTitle(context, 'Steps'),
+              buildContainer(
+                ListView.builder(
+                  itemBuilder: ((context, index) => Column(
+                        children: [
+                          ListTile(
+                            leading: CircleAvatar(
+                              child: Text('# ${(index + 1)}'),
+                            ),
+                            title: Text(selectedMeal.steps[index]),
+                          )
+                        ],
+                      )),
+                  itemCount: selectedMeal.steps.length,
+                ),
+              ),
+            ],
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
+        child: Icon(Icons.delete),
       ),
     );
   }

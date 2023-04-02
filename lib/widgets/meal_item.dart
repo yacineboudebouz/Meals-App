@@ -10,14 +10,17 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeItem;
 
-  MealItem(
-      {required this.id,
-      required this.title,
-      required this.imageUrl,
-      required this.duration,
-      required this.complexity,
-      required this.affordability});
+  MealItem({
+    required this.id,
+    required this.title,
+    required this.imageUrl,
+    required this.duration,
+    required this.complexity,
+    required this.affordability,
+    required this.removeItem,
+  });
   String get affordabilityText {
     switch (affordability) {
       case Affordability.Affordable:
@@ -51,10 +54,16 @@ class MealItem extends StatelessWidget {
   }
 
   void selectMeal(BuildContext cnt) {
-    Navigator.of(cnt).pushNamed(
-      MealDetailsScreen.routeName,
-      arguments: id,
-    );
+    Navigator.of(cnt)
+        .pushNamed(
+          MealDetailsScreen.routeName,
+          arguments: id,
+        )
+        .then((value) => {
+          if(value != Null){
+            removeItem(value)
+          }
+        });
   }
 
   @override
